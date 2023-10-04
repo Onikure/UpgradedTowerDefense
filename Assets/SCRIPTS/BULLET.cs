@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BULLET : MonoBehaviour
+public class Bullet : MonoBehaviour
 {
     [Header ("References")]
     [SerializeField] private Rigidbody2D rb;
