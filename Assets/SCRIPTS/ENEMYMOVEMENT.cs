@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ENEMYMOVEMENT : MonoBehaviour
+public class EnemyMovement : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private Rigidbody2D rb;
@@ -15,7 +15,7 @@ public class ENEMYMOVEMENT : MonoBehaviour
 
     private void Start()
     {
-        target = LEVELMANAGE.main.path[pathIndex];
+        target = LevelManager.main.path[pathIndex];
     }
 
     private void Update()
@@ -24,15 +24,15 @@ public class ENEMYMOVEMENT : MonoBehaviour
         {
             pathIndex++;
 
-            if (pathIndex == LEVELMANAGE.main.path.Length) // Change "path.length" to "path.Length"
+            if (pathIndex == LevelManager.main.path.Length)
             {
-                ENEMYSPAWNER.onEnemyDestory.Invoke();
+                EnemySpawner.onEnemyDestory.Invoke();
                 Destroy(gameObject);
                 return;
             }
             else
             {
-                target = LEVELMANAGE.main.path[pathIndex];
+                target = LevelManager.main.path[pathIndex];
             }
         }
     }

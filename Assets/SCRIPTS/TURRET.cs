@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-public class TURRET : MonoBehaviour
+public class Turret : MonoBehaviour
 {
     [Header ("References")]
     [SerializeField] private Transform turretRotationPoint;
@@ -30,7 +30,7 @@ public class TURRET : MonoBehaviour
 
         RotateTowardsTarget();
 
-        // Calculate dot product to check if turret is pointing at the target
+        
         Vector3 toTarget = target.position - turretRotationPoint.position;
         toTarget.Normalize();
         float dotProduct = Vector3.Dot(turretRotationPoint.up, toTarget);
@@ -50,7 +50,7 @@ public class TURRET : MonoBehaviour
     private void Shoot()
     {
         GameObject bulletObj = Instantiate (bulletPrefab, firingPoint.position, Quaternion.identity);
-        BULLET bulletScript = bulletObj.GetComponent<BULLET>();
+        Bullet bulletScript = bulletObj.GetComponent<Bullet>();
         bulletScript.SetTarget(target);
     }
 

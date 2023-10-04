@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class ENEMYSPAWNER : MonoBehaviour
+public class EnemySpawner: MonoBehaviour
 {
     [Header ("References")]
     [SerializeField] private GameObject[] enemyPrefabs;
@@ -76,7 +76,7 @@ public class ENEMYSPAWNER : MonoBehaviour
     private void SpawnEnemy()
     {
         GameObject prefabToSpawn = enemyPrefabs[0];
-        Instantiate(prefabToSpawn, LEVELMANAGE.main.startpoint.position, Quaternion.identity);
+        Instantiate(prefabToSpawn, LevelManager.main.startpoint.position, Quaternion.identity);
     }
 
     private int EnemiesPerWave()
